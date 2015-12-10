@@ -6,11 +6,10 @@
 
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <style type="text/css"></style>
+    <link href='https://fonts.googleapis.com/css?family=Lekton' rel='stylesheet' type='text/css'>
     <script type="text/javascript">
 
       $(document).ready(function(){
-
-        // var words = ['WHEN', 'YA', 'MAMA', 'ASKS'];
 
         function all_permutations(input) {
 
@@ -66,7 +65,7 @@
                 console.log(response.statuses);
                 console.log(response.statuses.text);
                 $('#main').addClass('mainAppear');
-                $(".start").html(query);
+                // $(".start").html(query);
               });
 
             last.innerHTML = text;
@@ -75,22 +74,22 @@
 
 
 
-      $('.start').click(function(){
-// $("h2").click(function(){
+        $('.start').click(function(){
 
-        var search = prompt("Type a phrase using four common words.");
+        var search = prompt("Type a phrase below, using four common words.");
         // var search = "how do i swim";
+
+        $('h2').toggleClass("invisible");
+
         console.log(search);
 
         display_permutations(search);
 
+
+
       });//end of the click function
 
     });
-
-
-
-
 
 
 
@@ -100,27 +99,56 @@
     <style>
 
   .start{
+display: block;
+position: relative;
+left: 30%;
+top: 30%;
+/*z-index: -1;*/
+border-style: outset;
+width: 100px;
+height: 45px;
+border-radius: 16px;
 text-decoration: none;
 color: darkgray;
-font-family: Courier;
-font-style: italic;
+font-family: 'Roboto', sans-serif;
 font-weight: lighter;
-font-size: 2em;
-font-kerning: 2px;}
+font-size: 1.2em;
+font-kerning: 2px;
+padding-top: 15px;
+background-color: rgba(192,192,192,0.3);
+text-align: center;
+/*background-color: rgb(246,246,246);*/
+/*transition: background-color 1s ease;
+  background-color: rgba(192,192,192,0.3);*/
+/*color:rgba(192,192,192,0.3);
+transition: color 0.5s ease;*/
+}
+
+  .invisible{
+    visibility: hidden;
+  }
+
+  #main{
+display: block;
+font-family: 'Lekton';
+font-weight: lighter;
+font-size: 1em;
+color: rgb (40,40,40);
+width: 500px;
+height: auto;
+position: relative;
+left: 10%;
+top: 3%;
+  }
+
 
     </style>
   </head>
 
-<!-- permutation display -->
-
-
 <body>
 
 
-
-<h1> </h1>
-
-<h2 class="start"> click </h2>
+<h2 class="start"> _ ? _ _ </h2>
 
 <br>
 
