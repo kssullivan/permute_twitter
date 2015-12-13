@@ -63,13 +63,25 @@
               function(response){
 
                 console.log(response.statuses);
-                console.log(response.statuses.text);
+                // console.log(response.statuses.text);
                 $('#main').addClass('mainAppear');
                 // $(".start").html(query);
               });
 
             last.innerHTML = text;
             main.appendChild(last);
+
+
+            $.getJSON(url,
+
+              function(response){
+
+                console.log(response.profile_background_image_url);
+                // $('#main').addClass('mainAppear');
+                // $(".start").html(query);
+              });
+
+
         }
 
 
@@ -88,6 +100,8 @@
 
 
       });//end of the click function
+
+
 
     });
 
@@ -122,6 +136,16 @@ text-align: center;
   background-color: rgba(192,192,192,0.3);*/
 /*color:rgba(192,192,192,0.3);
 transition: color 0.5s ease;*/
+}
+
+.start {
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+
+.start:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
 }
 
   .invisible{
