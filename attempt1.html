@@ -35,8 +35,10 @@
         function display_permutations(search) {
 
           //creates array objects of individual words by "splitting" at each " "(space)
-            var wordsArray = search.split(" ");
+
+            var wordsArray = search.split(" ").slice(2,6);
             var text = '', permutations, i, j;
+            console.log(wordsArray);
 
           //declares js vars from html elements "main:main", creates "last:div"
             var main = document.getElementById('main'), last = document.createElement('div');
@@ -56,8 +58,10 @@
                 fullPermutationsArray.push(fullPermutationWithQuots);
                 text = text + '<br />';
             }
-            //accesses first 10 twitter results, displays upto 1000
-            fullPermutationsArray.splice(10,1000);
+            //excerpts 10 twitter results, removes up to 1000
+            fullPermutationsArray.slice(1,10);
+            //fullPermutationsArray.splice(10,1000);
+            console.log(fullPermutationsArray);
 
             //makes call to twitter api, with each permutation
             var query = fullPermutationsArray.join(" OR ");
@@ -82,10 +86,12 @@
                 $('#main').addClass('mainAppear');
                 // $(".start").html(query);
 
-                var newSearchArray = [];
+                var search = [];
                 var newSearch = tweetString.split(" ").slice(2,6);
-                newSearchArray.push(newSearch);
-                console.log(newSearchArray);
+                //search.push(newSearch);
+              //  console.log(search);
+
+                display_permutations(tweetString);
 
                 // for (var i = 0; i < newSearch.length; i++) {
                 //   newSearchArray.push(newSearch);
