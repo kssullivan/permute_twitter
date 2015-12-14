@@ -59,7 +59,7 @@
                 text = text + '<br />';
             }
             //excerpts 10 twitter results, removes up to 1000
-            // fullPermutationsArray.slice(1,10);
+            fullPermutationsArray = fullPermutationsArray.slice(1,10);
             fullPermutationsArray.splice(10,1000);
             console.log(fullPermutationsArray);
 
@@ -97,7 +97,7 @@
                 //   newSearchArray.push(newSearch);
                 // }
 
-                // document.getElementById('image').setAttribute('src',profString)
+                document.getElementById('image').setAttribute('src',profString)
 
               });
 
@@ -201,12 +201,11 @@ padding: 50px;
 
 }*/
 
-  /*#image {
-  background-image: image();
+  #image {
   width: 30px;
   height: auto;
-  display: inline-block;
-}*/
+  display: block;
+}
 
     </style>
   </head>
@@ -220,5 +219,8 @@ padding: 50px;
 
 <div id="main">
 </div>
+
+<img id="image"/>
+
 
 </body></html>
