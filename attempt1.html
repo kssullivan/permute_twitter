@@ -78,9 +78,10 @@
                 var tweet = response.statuses[0].text;
                 var tweetString = JSON.stringify(tweet);
 
-                //pulls profile pic from object, converts to string, removes "normal" clause
+                //pulls profile pic from object, removes "normal" clause, sets to image id
                 var profPic = response.statuses[0].user.profile_image_url;
-                var profString = JSON.stringify(profPic).replace("_normal",'');
+                var profString = profPic.replace("_normal",'');
+
 
                 //
                 // document.getElementById('image').setAttribute('src',profString)
@@ -115,6 +116,8 @@
             last.innerHTML = text;
             main.appendChild(last);
 
+            // new.innerHTML = image;
+            // image.appendChild(new);
 
 
 
@@ -182,18 +185,19 @@ transition: color 0.5s ease;*/
   }
 
   #main{
-display: block;
+display: inline-block;
 font-family: 'Lekton';
 font-weight: lighter;
 font-size: 1em;
 color: rgb (40,40,40);
-width: 500px;
+width: 200px;
 height: auto;
 position: relative;
 left: 10%;
 top: 3%;
 padding: 50px;
   }
+
 
   div {
     padding: 50px;
@@ -211,11 +215,17 @@ padding: 50px;
 
 }*/
 
-  /*#image {
+  .imageAppear {
   width: 30px;
-  height: auto;
-  display: block;
-}*/
+  max-width: 50px;
+  height: 200px;
+  display: inline-block;
+  object-fit: cover;
+  padding-left: 50px;
+  position: relative;
+  left: 20%;
+  top: 3%;
+}
 
     </style>
   </head>
