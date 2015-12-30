@@ -5,6 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="jquery.canvasScramble.js"></script>
     <style type="text/css"></style>
     <link href='https://fonts.googleapis.com/css?family=Lekton' rel='stylesheet' type='text/css'>
     <script type="text/javascript">
@@ -79,7 +80,16 @@
 
                 //pulls profile pic from object, converts to string, removes "normal" clause
                 var profPic = response.statuses[0].user.profile_image_url;
-                var profString = JSON.stringify(profPic).replace("_normal","");
+                var profString = JSON.stringify(profPic).replace("_normal",'');
+
+                //
+                // document.getElementById('image').setAttribute('src',profString)
+
+                // document.createElement('image').setAttribute('src', profString)
+                var image = document.getElementById('image').setAttribute('src', profString)
+                $('#image').addClass('imageAppear');
+
+                // var DisplayImg = $('image').canvasScramble({debug:true,displayInput:false});
 
                 console.log(tweetString);
                 console.log(profString);
@@ -97,7 +107,7 @@
                 //   newSearchArray.push(newSearch);
                 // }
 
-                // document.getElementById('image').setAttribute('src',profString)
+
 
               });
 
@@ -221,6 +231,8 @@ padding: 50px;
 </div>
 
 <img id="image"/>
+
+
 
 
 </body></html>
